@@ -12,3 +12,7 @@ cd ravn-challenge-v2-ricardo-q-bazan
 yarn
 yarn dev
 ```
+
+## License
+
+MIT © [Ricardo Q. Bazan](https://rcrd.space)
