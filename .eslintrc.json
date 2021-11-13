@@ -22,5 +22,6 @@
       }
     ],
     "simple-import-sort/exports": "error"
-  }
+  },
+  "ignorePatterns": ["!.storybook"]
 }

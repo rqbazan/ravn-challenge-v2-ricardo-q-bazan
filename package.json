@@ -19,7 +19,9 @@
     "check-format": "yarn prettier --list-different",
     "typecheck": "tsc --noEmit",
     "validate": "run-p check-format lint typecheck",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "engines": {
     "node": ">=14.x"
@@ -28,18 +30,24 @@
     "autoprefixer": "10.4.0",
     "clsx": "1.1.1",
     "next": "12.0.3",
-    "postcss": "8.3.11",
     "preact": "10.5.15",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "tailwindcss": "2.2.19"
   },
   "devDependencies": {
+    "@babel/core": "7.16.0",
     "@commitlint/cli": "14.1.0",
     "@commitlint/config-conventional": "14.1.0",
+    "@storybook/addon-actions": "6.3.12",
+    "@storybook/addon-essentials": "6.3.12",
+    "@storybook/addon-links": "6.3.12",
+    "@storybook/addon-postcss": "2.0.0",
+    "@storybook/react": "6.3.12",
     "@types/node": "16.11.7",
     "@types/react": "17.0.34",
     "@types/tailwindcss": "2.2.4",
+    "babel-loader": "8.2.3",
     "eslint": "7",
     "eslint-config-next": "12.0.3",
     "eslint-config-prettier": "8.3.0",
@@ -47,6 +55,7 @@
     "husky": "7.0.4",
     "lint-staged": "11.2.6",
     "npm-run-all": "4.1.5",
+    "postcss": "8.3.11",
     "prettier": "2.4.1",
     "semantic-release": "18.0.0",
     "typescript": "4.4.4"

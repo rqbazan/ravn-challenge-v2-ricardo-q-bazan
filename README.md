@@ -1,8 +1,9 @@
 # sw.rcrd.space 🛰
 
 - **Framework**: [Next.js](https://nextjs.org)
-- **Deployment**: [Vercel](https://vercel.com)
+- **Component Driven**: [Storybook](https://storybook.js.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com)
+- **Deployment**: [Vercel](https://vercel.com)
 
 ## Running Locally
 
