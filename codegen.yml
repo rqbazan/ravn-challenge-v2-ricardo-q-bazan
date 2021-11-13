@@ -1,0 +1,11 @@
+schema: ${NEXT_PUBLIC_API_URL}
+documents: 'src/gql/!(types)/*.ts'
+generates:
+  ./src/gql/index.ts:
+    hooks:
+      afterOneFileWrite:
+        - prettier --write
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
