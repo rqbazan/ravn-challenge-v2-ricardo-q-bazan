@@ -22,7 +22,7 @@ Playground.args = {
   variant: 'p',
 }
 
-export const AllVariants = () => {
+export function AllVariants() {
   return (
     <div className="flex flex-col space-y-3">
       <Typography as="h2" variant="h2">

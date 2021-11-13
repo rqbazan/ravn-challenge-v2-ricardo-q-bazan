@@ -27,6 +27,9 @@ module.exports = {
         heading: '17px',
         paragraph: '14px',
       },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      },
     },
   },
 }
