@@ -10,7 +10,7 @@ export interface DataCellProps {
 
 export function DataCell({ label, value, className, ...props }: DataCellProps) {
   return (
-    <Cell {...props} className={clsx(className, 'flex justify-between')}>
+    <Cell {...props} className={clsx(className, 'flex justify-between border-b border-border')}>
       <Typography variant="h2LowEmphasis">{label}</Typography>
       {value && <Typography variant="h2">{value}</Typography>}
     </Cell>

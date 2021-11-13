@@ -18,7 +18,7 @@ export function PersonCell({
   ...props
 }: PersonCellProps) {
   return (
-    <Cell className={clsx(className, 'flex items-center')} {...props}>
+    <Cell className={clsx(className, 'flex items-center border-b border-border')} {...props}>
       <div className="flex flex-col flex-1 mr-4">
         <Typography variant="h2">{name}</Typography>
         <Typography variant="pLowEmphasis">

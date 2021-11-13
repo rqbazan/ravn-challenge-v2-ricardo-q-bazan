@@ -10,6 +10,7 @@ module.exports = {
         sans: ['SF Pro Display', ...defaultTheme.fontFamily.sans],
       },
       colors: {
+        border: 'rgba(0, 0, 0, 0.1)',
         text: {
           dark: '#333333',
           light: '#828282',
