@@ -1,3 +1,4 @@
+export * from './data-cell'
 export * from './loading-cell'
 export * from './loading-indicator'
 export * from './notice-cell'
