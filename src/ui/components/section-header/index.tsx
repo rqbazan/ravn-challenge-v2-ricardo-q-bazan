@@ -9,10 +9,10 @@ export interface SectionHeaderProps {
 
 export function SectionHeader({ title, className, ...props }: SectionHeaderProps) {
   return (
-    <header className={clsx(className, 'px-4 pt-8 pb-2')} {...props}>
+    <div className={clsx(className, 'px-4 pt-8 pb-2')} {...props}>
       <Typography as="h2" variant="h2">
         {title}
       </Typography>
-    </header>
+    </div>
   )
 }
