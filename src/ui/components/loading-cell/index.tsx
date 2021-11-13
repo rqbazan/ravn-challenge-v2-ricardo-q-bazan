@@ -1,5 +1,3 @@
-import clsx from 'clsx'
-
 import { Cell } from '~/ui/core'
 
 import { LoadingIndicator } from '../loading-indicator'
