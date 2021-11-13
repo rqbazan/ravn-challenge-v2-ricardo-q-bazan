@@ -9,6 +9,14 @@ export default {
     as: {
       defaultValue: 'p',
     },
+    isColorless: {
+      defaultValue: false,
+    },
+  },
+  args: {
+    children: 'Lorem ipsum dolor sit.',
+    as: 'p',
+    variant: 'p',
   },
 } as ComponentMeta<typeof Typography>
 
@@ -16,10 +24,11 @@ const Template: ComponentStory<typeof Typography> = args => <Typography {...args
 
 export const Playground = Template.bind({})
 
-Playground.args = {
-  children: 'Lorem ipsum dolor sit.',
-  as: 'p',
-  variant: 'p',
+export const CustomColor = Template.bind({})
+
+CustomColor.args = {
+  isColorless: true,
+  className: 'text-green-300',
 }
 
 export function AllVariants() {
