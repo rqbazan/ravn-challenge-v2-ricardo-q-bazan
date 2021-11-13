@@ -8,10 +8,8 @@ export default function App({ Component: Page, pageProps }: AppProps) {
   const Layout = Page.Layout || React.Fragment
 
   return (
-    <React.Fragment>
-      <Layout>
-        <Page {...pageProps} />
-      </Layout>
-    </React.Fragment>
+    <Layout>
+      <Page {...pageProps} />
+    </Layout>
   )
 }
