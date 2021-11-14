@@ -13,6 +13,7 @@
 
 - **Web**: https://sw.rcrd.space
 - **UI**: https://sw.rcrd.space/storybook
+- **E2E**: https://dashboard.cypress.io/projects/rfp1ky
 
 ## Architecture
 
