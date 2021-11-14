@@ -24,6 +24,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           install: false
+          record: true
           command: yarn test:e2e
         env:
           NEXT_PUBLIC_API_URL: https://swapi-graphql.netlify.app/.netlify/functions/index
