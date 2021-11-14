@@ -6,7 +6,7 @@ import { ArrowRightSvg } from '~/ui/icons'
 export interface PersonCellProps {
   name: string
   homeworldName: string
-  speciesName: string
+  speciesName?: string
   className?: string
 }
 
@@ -22,7 +22,7 @@ export function PersonCell({
       <div className="flex flex-col flex-1 mr-4">
         <Typography variant="h2">{name}</Typography>
         <Typography variant="pLowEmphasis">
-          {speciesName} from {homeworldName}
+          {speciesName || 'Human'} from {homeworldName}
         </Typography>
       </div>
       <ArrowRightSvg />
