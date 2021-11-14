@@ -1285,12 +1285,10 @@ export type AllPeopleQuery = {
   allPeople?:
     | {
         __typename?: 'PeopleConnection'
-        totalCount?: number | null | undefined
         edges?:
           | Array<
               | {
                   __typename?: 'PeopleEdge'
-                  cursor: string
                   node?:
                     | {
                         __typename?: 'Person'
@@ -1316,8 +1314,6 @@ export type AllPeopleQuery = {
         pageInfo: {
           __typename?: 'PageInfo'
           hasNextPage: boolean
-          hasPreviousPage: boolean
-          startCursor?: string | null | undefined
           endCursor?: string | null | undefined
         }
       }
@@ -1329,7 +1325,6 @@ export const AllPeopleDocument = gql`
   query allPeople($first: Int, $after: String, $before: String, $last: Int) {
     allPeople(first: $first, after: $after, before: $before, last: $last) {
       edges {
-        cursor
         node {
           id
           name
@@ -1343,11 +1338,8 @@ export const AllPeopleDocument = gql`
           }
         }
       }
-      totalCount
       pageInfo {
         hasNextPage
-        hasPreviousPage
-        startCursor
         endCursor
       }
     }

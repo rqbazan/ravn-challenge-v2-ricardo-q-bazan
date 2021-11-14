@@ -4,7 +4,6 @@ const allPeopleQueryNode = gql`
   query allPeople($first: Int, $after: String, $before: String, $last: Int) {
     allPeople(first: $first, after: $after, before: $before, last: $last) {
       edges {
-        cursor
         node {
           id
           name
@@ -18,11 +17,8 @@ const allPeopleQueryNode = gql`
           }
         }
       }
-      totalCount
       pageInfo {
         hasNextPage
-        hasPreviousPage
-        startCursor
         endCursor
       }
     }

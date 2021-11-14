@@ -3,7 +3,7 @@
  */
 import * as React from 'react'
 import { ApolloClient, HttpLink, InMemoryCache, NormalizedCacheObject } from '@apollo/client'
-import { concatPagination } from '@apollo/client/utilities'
+import { relayStylePagination } from '@apollo/client/utilities'
 import merge from 'deepmerge'
 import isEqual from 'lodash.isequal'
 
@@ -24,7 +24,7 @@ function createApolloClient() {
       typePolicies: {
         Query: {
           fields: {
-            allPosts: concatPagination(),
+            allPeople: relayStylePagination(),
           },
         },
       },
