@@ -118,7 +118,16 @@ vercel dev
 ## Considerations
 
 - The commit history follows [Semantic Versioning](https://semver.org/), enforced by [commitlint](https://github.com/conventional-changelog/commitlint)
+
 - The [automatic releases](./.github/workflows/release.yml) are made by [Semantic Release](https://github.com/semantic-release/semantic-release)
+
+## Assumptions
+
+- On non-mobiles devices the interaction is restricted to the `/` route, but with shallow navigation, which ensure the consistency with mobile. So, the location will change to `/people/:personId` but the route is still `/`.
+
+- On mobiles devices there will be a page navigation from `/` to `/people/:personId` and back.
+
+- Entering to `/people/:personId` directly, will always render the person information without the people list component.
 
 ## License
 
