@@ -1,10 +1,19 @@
 # sw.rcrd.space 🛰
 
-<div align="center" style="height:360px;margin-bottom:32px;">
+<div align="center" style="height:360px;margin-bottom:40px;">
   <a href="https://www.loom.com/share/0852e775ad6946f3939137eb47bd2458">
     <img src="https://cdn.loom.com/sessions/thumbnails/0852e775ad6946f3939137eb47bd2458-with-play.gif">
   </a>
   <p><em>Application walkthrough</em></p>
+</div>
+
+---
+
+<div align="center" style="height:360px;margin-bottom:32px;">
+  <a href="https://excalidraw.com/#json=k6pQGzgskJz0DcXvO7xDt,bYqI9PPcI8CB3vue35JRGQ">
+    <img src="./images/architecture-overview.png">
+  </a>
+  <p><em>Architecture overview</em></p>
 </div>
 
 ---
@@ -26,6 +35,8 @@
 ## Structure
 
 ```
+├── 📁 cypress
+|  ├── 📂 e2e: All End-To-End tests
 ├── 📁 public: Folder to serve static files
 ├── 📂 src: Contains all the code source
 |  ├── 📄 env.ts: Single entry point for all env vars
