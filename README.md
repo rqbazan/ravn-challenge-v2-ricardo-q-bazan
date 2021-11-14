@@ -1,10 +1,16 @@
 # sw.rcrd.space 🛰
 
+## Description
+
+Challenge from [Ravn](https://www.ravn.co/). The Star Wars Registry helps you to explore Star Wars people and get information about them, powered by [SWAPI GraphQL](https://swapi-graphql.netlify.app).
+
+## Overviews
+
 <div align="center" style="height:360px;margin-bottom:40px;">
   <a href="https://www.loom.com/share/0852e775ad6946f3939137eb47bd2458">
     <img src="https://cdn.loom.com/sessions/thumbnails/0852e775ad6946f3939137eb47bd2458-with-play.gif">
   </a>
-  <p><em>Application walkthrough</em></p>
+  <p><em>Application overview</em></p>
 </div>
 
 ---
