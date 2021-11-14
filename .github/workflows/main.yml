@@ -27,3 +27,4 @@ jobs:
           command: yarn test:e2e
         env:
           NEXT_PUBLIC_API_URL: https://swapi-graphql.netlify.app/.netlify/functions/index
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
