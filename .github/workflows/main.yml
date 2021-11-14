@@ -15,11 +15,12 @@ jobs:
         with:
           node-version: 14.x
 
-      - name: Install deps and build (with cache)
-        uses: bahmutov/npm-install@v1
-
-      - name: Build
-        run: yarn build
-
       - name: Static Testing
+        uses: cypress-io/github-action@v2
         run: yarn validate
+
+      - name: E2E Testing
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          command: yarn test:e2e

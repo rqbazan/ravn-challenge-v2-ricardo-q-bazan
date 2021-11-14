@@ -29,7 +29,7 @@ export function PersonView({ personId }: PersonViewProps) {
     <React.Fragment>
       <section>
         <SectionHeader title="General Information" />
-        <DataCell label="Name" value={data?.person?.name!} />
+        <DataCell label="Name" value={data?.person?.name!} data-testid="personName" />
         <DataCell label="Eye Color" value={capitalize(data?.person?.eyeColor!)} />
         <DataCell label="Hair Color" value={capitalize(data?.person?.hairColor!)} />
         <DataCell label="Skin Color" value={capitalize(data?.person?.skinColor!)} />
