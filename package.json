@@ -21,8 +21,9 @@
     "validate": "run-p check-format lint typecheck",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006 -s ./public",
-    "build-storybook": "build-storybook -s public",
-    "gql:generate": "graphql-codegen -r dotenv/config"
+    "build:sb": "build-storybook -o ./public/storybook",
+    "gql:generate": "graphql-codegen -r dotenv/config",
+    "vercel-build": "run-s build:sb build"
   },
   "engines": {
     "node": ">=14.x"

@@ -1,5 +1,6 @@
-const path = require('path')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
+
+const getPublicPath = configType => (configType === 'PRODUCTION' ? '/storybook/' : '/')
 
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -15,8 +16,7 @@ module.exports = {
       },
     },
   ],
-  webpackFinal: config => {
-    // change .svg loader to `@svgr/webpack`
+  webpackFinal: (config, { configType }) => {
     const defaultRule = config.module.rules.find(rule => rule.test?.test('.svg'))
 
     defaultRule.exclude = /\.svg$/
@@ -26,13 +26,14 @@ module.exports = {
       use: ['@svgr/webpack'],
     })
 
-    // resolve typescript aliases
-    config.resolve.plugins = [
-      ...config.resolve.plugins,
-      new TsconfigPathsPlugin({
-        configFile: path.resolve(__dirname, '../tsconfig.json'),
-      }),
-    ]
+    config.resolve.plugins = [...config.resolve.plugins, new TsconfigPathsPlugin()]
+
+    config.output.publicPath = getPublicPath(configType)
+
+    return config
+  },
+  managerWebpack: (config, { configType }) => {
+    config.output.publicPath = getPublicPath(configType)
 
     return config
   },
