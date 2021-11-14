@@ -25,3 +25,5 @@ jobs:
         with:
           install: false
           command: yarn test:e2e
+        env:
+          NEXT_PUBLIC_API_URL: https://swapi-graphql.netlify.app/.netlify/functions/index
