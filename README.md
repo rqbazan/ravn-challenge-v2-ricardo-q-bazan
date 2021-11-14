@@ -1,5 +1,14 @@
 # sw.rcrd.space 🛰
 
+<div align="center" style="height:360px;margin-bottom:32px;">
+  <a href="https://www.loom.com/share/0852e775ad6946f3939137eb47bd2458">
+    <img src="https://cdn.loom.com/sessions/thumbnails/0852e775ad6946f3939137eb47bd2458-with-play.gif">
+  </a>
+  <p><em>Application walkthrough</em></p>
+</div>
+
+---
+
 ## Deploys
 
 - **Web**: https://sw.rcrd.space
