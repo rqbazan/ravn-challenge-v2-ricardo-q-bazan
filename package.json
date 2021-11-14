@@ -24,7 +24,7 @@
     "build:sb": "build-storybook -o ./public/storybook",
     "gql:generate": "graphql-codegen -r dotenv/config",
     "vercel-build": "run-s build:sb build",
-    "cy:run": "cypress run",
+    "cy:run": "cypress run --record",
     "cy:open": "cypress open",
     "test:e2e": "is-ci \"test:e2e:run\" \"test:e2e:dev\"",
     "pretest:e2e:run": "npm run build",
