@@ -93,17 +93,21 @@ yarn storybook
 
 ### Production <sup>_similar_</sup>
 
-1. Install `vercel` CLI globally
+1.  Deploy the project to Vercel [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frqbazan%2Fravn-challenge-v2-ricardo-q-bazan&env=NEXT_PUBLIC_API_URL)
+
+2.  Install `vercel` CLI in your computer
 
 ```bash
 yarn global add vercel
 ```
 
-2. Run `vercel` in dev mode
+3. Run `vercel` in dev mode
 
 ```bash
 vercel dev
 ```
+
+> The `vercel dev` command probably will prompt you a login first
 
 ## Considerations
 
