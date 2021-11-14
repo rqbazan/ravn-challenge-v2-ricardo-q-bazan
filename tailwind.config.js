@@ -1,3 +1,4 @@
+// @preval
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
@@ -5,7 +6,12 @@ module.exports = {
   purge: ['./src/**/*.tsx', './src/**/*.css'],
   darkMode: 'class',
   theme: {
+    /**
+     * I've re-exported some keys intentionally in order
+     * to use the values from the base code
+     */
     extend: {
+      screen: defaultTheme.screens,
       fontFamily: {
         sans: ['SF Pro Display', ...defaultTheme.fontFamily.sans],
       },

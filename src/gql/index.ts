@@ -1321,6 +1321,40 @@ export type AllPeopleQuery = {
     | undefined
 }
 
+export type PersonQueryVariables = Exact<{
+  personId?: Maybe<Scalars['ID']>
+}>
+
+export type PersonQuery = {
+  __typename?: 'Root'
+  person?:
+    | {
+        __typename?: 'Person'
+        id: string
+        name?: string | null | undefined
+        eyeColor?: string | null | undefined
+        hairColor?: string | null | undefined
+        skinColor?: string | null | undefined
+        birthYear?: string | null | undefined
+        vehicleConnection?:
+          | {
+              __typename?: 'PersonVehiclesConnection'
+              vehicles?:
+                | Array<
+                    | { __typename?: 'Vehicle'; id: string; name?: string | null | undefined }
+                    | null
+                    | undefined
+                  >
+                | null
+                | undefined
+            }
+          | null
+          | undefined
+      }
+    | null
+    | undefined
+}
+
 export const AllPeopleDocument = gql`
   query allPeople($first: Int, $after: String, $before: String, $last: Int) {
     allPeople(first: $first, after: $after, before: $before, last: $last) {
@@ -1380,3 +1414,53 @@ export function useAllPeopleLazyQuery(
 export type AllPeopleQueryHookResult = ReturnType<typeof useAllPeopleQuery>
 export type AllPeopleLazyQueryHookResult = ReturnType<typeof useAllPeopleLazyQuery>
 export type AllPeopleQueryResult = Apollo.QueryResult<AllPeopleQuery, AllPeopleQueryVariables>
+export const PersonDocument = gql`
+  query person($personId: ID) {
+    person(id: $personId) {
+      id
+      name
+      eyeColor
+      hairColor
+      skinColor
+      birthYear
+      vehicleConnection {
+        vehicles {
+          id
+          name
+        }
+      }
+    }
+  }
+`
+
+/**
+ * __usePersonQuery__
+ *
+ * To run a query within a React component, call `usePersonQuery` and pass it any options that fit your needs.
+ * When your component renders, `usePersonQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = usePersonQuery({
+ *   variables: {
+ *      personId: // value for 'personId'
+ *   },
+ * });
+ */
+export function usePersonQuery(
+  baseOptions?: Apollo.QueryHookOptions<PersonQuery, PersonQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<PersonQuery, PersonQueryVariables>(PersonDocument, options)
+}
+export function usePersonLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<PersonQuery, PersonQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<PersonQuery, PersonQueryVariables>(PersonDocument, options)
+}
+export type PersonQueryHookResult = ReturnType<typeof usePersonQuery>
+export type PersonLazyQueryHookResult = ReturnType<typeof usePersonLazyQuery>
+export type PersonQueryResult = Apollo.QueryResult<PersonQuery, PersonQueryVariables>

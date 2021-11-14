@@ -1,8 +1,12 @@
 import * as React from 'react'
+import { useRouter } from 'next/router'
 import useInfiniteScroll from 'react-infinite-scroll-hook'
+import useMedia from 'use-media'
 
 import { Person, useAllPeopleQuery } from '~/gql'
-import { DataCell, LoadingCell, NoticeCell, PersonCell, SectionHeader } from '~/ui/components'
+import { LoadingCell, NoticeCell, PersonCell } from '~/ui/components'
+import theme from '~/ui/theme'
+import { PersonView } from '~/views/person'
 
 interface AllPeopleListWidgetProps {
   chunkSize?: number
@@ -22,11 +26,30 @@ function AllPeopleList({ data, hasNextPage, onLoadMore }: AllPeopleListProps) {
     delayInMs: 1000,
   })
 
+  const router = useRouter()
+
+  const isBreakpointMD = useMedia(theme.breakpoints.md)
+
   return (
     <React.Fragment>
       {data.map(item => {
+        const href = `/people/${item.id}`
+
         return (
-          <a key={item.id} href="#">
+          <a
+            key={item.id}
+            className="hover:bg-blue-50 focus:bg-blue-100"
+            href={href}
+            onClick={e => {
+              e.preventDefault()
+
+              if (!isBreakpointMD) {
+                router.push(href)
+              } else {
+                router.push(`/?personId=${item.id}`, href, { shallow: true })
+              }
+            }}
+          >
             <PersonCell
               name={item.name!}
               speciesName={item.species?.name!}
@@ -75,26 +98,17 @@ function AllPeopleListWidget({ chunkSize = 5 }: AllPeopleListWidgetProps) {
   )
 }
 
-export function HomeView() {
+export function ExplorerView() {
+  const { query } = useRouter()
+
   return (
     <div className="flex h-full">
-      <div className="flex flex-col w-full md:w-[350px] border-r border-border overflow-y-auto">
+      <div className="flex flex-col w-full md:w-[350px] border-r border-border md:overflow-y-auto">
         <AllPeopleListWidget />
       </div>
       <div className="flex-1 hidden md:block">
         <div className="mx-auto max-w-3xl">
-          <section>
-            <SectionHeader title="General Information" />
-            <DataCell label="Eye Color" value="Blue" />
-            <DataCell label="Eye Color" value="Blue" />
-            <DataCell label="Eye Color" value="Blue" />
-            <DataCell label="Eye Color" value="Blue" />
-          </section>
-          <section>
-            <SectionHeader title="Vehicles" />
-            <DataCell label="Snowspeeder" />
-            <DataCell label="Imperial Speeder Bike" />
-          </section>
+          {query.personId && <PersonView personId={query.personId as string} />}
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 import { MainLayout } from '~/layouts/main'
-import { HomeView } from '~/views/home'
+import { ExplorerView } from '~/views/explorer'
 
 export default function Home() {
-  return <HomeView />
+  return <ExplorerView />
 }
 
 Home.Layout = MainLayout
