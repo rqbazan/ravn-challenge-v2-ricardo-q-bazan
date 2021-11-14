@@ -47,6 +47,13 @@
 
 ## Running
 
+### Requirements
+
+- Node.js `>=14.x`
+- Yarn `^1.x`
+
+> You can use [nvm-sh](https://github.com/nvm-sh/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)
+
 ### Prepare
 
 ```bash
